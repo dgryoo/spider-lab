@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spider
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    open-in-view: false
+
+
