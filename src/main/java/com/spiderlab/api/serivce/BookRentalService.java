@@ -43,7 +43,7 @@ public class BookRentalService {
 
     }
 
-    public void rentBooks(String userId, RentBookRequest rentBookRequest) {
+    public synchronized void rentBooks(String userId, RentBookRequest rentBookRequest) {
         // 멤버 조회, 없을 경우 예외 발생
         Member member = memberRepository.findById(userId).orElseThrow(SourceNotFoundException::new);
 
@@ -65,8 +65,6 @@ public class BookRentalService {
             bookRental.rent(member);
             bookRental.getBook().increaseRentalCount();
         });
-
-
     }
 
     public void registerBookRental(String userId, RegisterBookRentalRequest registerBookRentalRequest) {

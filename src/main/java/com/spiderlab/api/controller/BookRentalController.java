@@ -24,7 +24,7 @@ public class BookRentalController {
 
     @PostMapping("/rent")
     public void rentBooks(@RequestHeader("X-User-Id") String userId, @RequestBody RentBookRequest rentBookRequest) {
-        bookRentalService.rentBooks(userId, rentBookRequest); // TODO : book rentalcount up
+        bookRentalService.rentBooks(userId, rentBookRequest);
     }
 
     @PostMapping("/register")
